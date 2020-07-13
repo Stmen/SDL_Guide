@@ -6,8 +6,7 @@
 int main(int argc, char* argv[])
 {
     std::string app_title = "SDL_Guide 01: Basic Application";
-    SDL_Event event = { 0 };
-    bool should_quit = false;
+    
 
     // INITIALIZATION:
     // -----------------------------------------------------------------------------------------------------------------
@@ -26,8 +25,13 @@ int main(int argc, char* argv[])
     SDL_Renderer* renderer = SDL_CreateRenderer(main_window, -1, 0);
 
     // PRIMARY & EVENT LOOP:
-    while (!should_quit) {
-        while (SDL_PollEvent(&event)) {
+    // -----------------------------------------------------------------------------------------------------------------
+
+    bool should_quit = false;
+    SDL_Event event = { 0 };
+
+    while (!should_quit) { // Game loop
+        while (SDL_PollEvent(&event)) { // Event loop
             switch (event.type) {
             case SDL_QUIT:
                 should_quit = 1;

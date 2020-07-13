@@ -79,7 +79,7 @@ int main(int argc, char* argv[])
 			// -----------------------------------------------------------------------------------------------------------------
 			// Get the current time by querying the performance counter and using the performance frequency to give it meaning 
 			// (convert it to miliseconds)
-			float currentTime = (float)SDL_GetPerformanceCounter() / SDL_GetPerformanceFrequency() /* currentTime is tick counter in Seconds */;
+			double currentTime = (double)SDL_GetPerformanceCounter() / SDL_GetPerformanceFrequency() /* currentTime is tick counter in Seconds */;
 			float deltaTime = static_cast<float>(currentTime - beforeTime) * 1000.0f /* How long it's been since the last frame in Milliseconds */;
 			beforeTime = currentTime; /* Prime beforeTime for the next frame */
 
